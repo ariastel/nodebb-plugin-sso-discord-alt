@@ -1,12 +1,9 @@
 {
-  "name": "nodebb-plugin-sso-discord-alt",
-  "version": "2.1.0",
+  "name": "@ariastel/nodebb-plugin-sso-discord-alt",
+  "version": "2.2.0",
   "description": "NodeBB Discord OAuth2 SSO",
   "main": "library.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jsumners/nodebb-plugin-sso-discord-alt.git"
-  },
+  "repository": "git://github.com/ariastel/nodebb-plugin-sso-discord-alt.git",
   "keywords": [
     "nodebb",
     "plugin",
@@ -25,11 +22,12 @@
       "name": "Julian Lam",
       "email": "julian@nodebb.org",
       "url": "https://github.com/julianlam"
-    }
+    },
+    "Ariastel Team <ariastel@iamantosik.me> (https://github.com/ariastel)"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jsumners/nodebb-plugin-sso-discord-alt/issues"
+    "url": "https://github.com/ariastel/nodebb-plugin-sso-discord-alt/issues"
   },
   "readme": "",
   "readmeFilename": "README.md",
@@ -51,5 +49,8 @@
     "pre-commit": "^1.2.2",
     "snazzy": "^9.0.0",
     "standard": "^16.0.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
