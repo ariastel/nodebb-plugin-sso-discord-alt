@@ -1,6 +1,6 @@
 {
   "name": "@ariastel/nodebb-plugin-sso-discord-alt",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "NodeBB Discord OAuth2 SSO",
   "main": "library.js",
   "repository": "git://github.com/ariastel/nodebb-plugin-sso-discord-alt.git",
