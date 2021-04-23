@@ -12,6 +12,8 @@ const async = require.main.require('async')
 const authenticationController = require.main.require('./src/controllers/authentication')
 const quickFormat = require('quick-format')
 
+const usernameReplacementRegexp = /[^'" \-+.*[\]0-9\u00BF-\u1FFF\u2C00-\uD7FF\w]/ig
+
 function doLog () {
   const args = Array.from(arguments)
   const method = args.splice(0, 1)[0]
@@ -36,7 +38,7 @@ const constants = {
   displayName: 'Discord',
   admin: {
     route: '/plugins/sso-discord-alt',
-    icon: 'fa-pied-piper'
+    icon: 'nbb-none'
   },
   oauth: { // a passport-oauth2 options object
     authorizationURL: 'https://discord.com/api/v8/oauth2/authorize',
@@ -248,7 +250,8 @@ DiscordAuth.login = function (profile, callback) {
 
       log('creating new user: %s', uid)
       const userFields = {
-        username: profile.displayName,
+        username: profile.displayName.replace(usernameReplacementRegexp, ''),
+        fullname: profile.displayName,
         email: profile.email
       }
       User.create(userFields, function (err, uid) {
