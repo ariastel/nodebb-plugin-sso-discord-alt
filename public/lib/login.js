@@ -12,7 +12,7 @@ define('sso-discord-alt/login', function () {
     const replaceEl = $('.alt-logins .discord a i')
     const replacement = document.createElement('img')
     replacement.src = config.relative_path + '/plugins/@ariastel/nodebb-plugin-sso-discord-alt/images/button_discord_login.svg'
-    replacement.style = 'height:42px;margin-top:4px;'
+    replacement.style = 'margin-top:4px;'
     replaceEl.replaceWith(replacement)
   }
 

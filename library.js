@@ -36,6 +36,11 @@ function logWarn () {
 const constants = {
   name: 'discord',
   displayName: 'Discord',
+  button: {
+    borderColor: '#7289DA',
+    backgroundColor: '#7289DA',
+    textColor: '#FFF'
+  },
   admin: {
     route: '/plugins/sso-discord-alt',
     icon: 'nbb-none'
@@ -171,7 +176,10 @@ DiscordAuth.getStrategy = function (strategies, callback) {
       url: '/auth/' + constants.name,
       callbackURL: `/auth/${constants.name}/callback`,
       icon: constants.admin.icon,
-      scope: ['identify', 'email']
+      scope: ['identify', 'email'],
+
+      displayName: constants.displayName,
+      ...constants.button
     })
     log('authentication strategy added')
 
